@@ -2,18 +2,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
 :root{--c:#00e5ff;--cg:rgba(0,229,255,0.7);--lime:#b2ff59;--blue:#00b0ff;}
 *{margin:0;padding:0;box-sizing:border-box;cursor:crosshair;}
-html,body{width:100%;height:100%;overflow:hidden;}
-body{background:#020508;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;color:#fff;}
 
-/* UPDATED FOR IPAD DIMENSIONS (1024x768) */
-.shell{position:relative;width:1024px;height:768px;filter:drop-shadow(0 28px 48px rgba(0,0,0,0.9)) drop-shadow(0 0 35px rgba(0,229,255,0.3)) drop-shadow(0 0 80px rgba(0,229,255,0.1));}
+/* FIX: Use 100dvh (Dynamic Viewport Height) to account for iPad browser bars */
+html,body{
+    width:100%;
+    height: 100dvh; 
+    overflow:hidden;
+    background:#020508;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Inter',sans-serif;
+    color:#fff;
+}
+
+/* FIX: Container stays 1024x768 but "Scales Down" to fit the available screen */
+.shell{
+    position:relative;
+    width:1024px;
+    height:768px;
+    flex-shrink: 0;
+    transform: scale(min(calc(100vw / 1040), calc(100dvh / 780)));
+    transform-origin: center center;
+    filter:drop-shadow(0 28px 48px rgba(0,0,0,0.9)) drop-shadow(0 0 35px rgba(0,229,255,0.3));
+}
+
 .shelf{position:absolute;bottom:-12px;left:52px;right:52px;height:13px;background:linear-gradient(180deg,rgba(0,229,255,0.2) 0%,rgba(0,0,0,0.8) 100%);clip-path:polygon(0 0,100% 0,calc(100% - 6px) 100%,6px 100%);}
 .card{width:1024px;height:768px;background:linear-gradient(160deg,#07101a 0%,#030810 60%,#050d18 100%);display:flex;flex-direction:column;position:relative;clip-path:polygon(52px 0%,calc(100% - 52px) 0%,100% 52px,100% calc(100% - 52px),calc(100% - 52px) 100%,52px 100%,0% calc(100% - 52px),0% 52px);overflow:hidden;}
-
 .card::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,229,255,0.012) 3px,rgba(0,229,255,0.012) 4px);pointer-events:none;z-index:1;}
 .border-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:200;overflow:visible;}
 
@@ -52,7 +72,7 @@ body{background:#020508;display:flex;align-items:center;justify-content:center;f
 .ctag{font-size:22px;font-weight:700;color:#fff;text-shadow:0 0 14px rgba(255,255,255,0.2);line-height:1.1;}
 
 /* BLOCKS */
-.blk{flex:1;display:flex;flex-direction:column;padding:0 0 10px 16px;position:relative;overflow:hidden;border:1px solid rgba(178,255,89,0.25);background:rgba(178,255,89,0.03);box-shadow:inset 0 0 24px rgba(178,255,89,0.07),0 0 16px rgba(178,255,89,0.08);max-height:220px;}
+.blk{flex:1;display:flex;flex-direction:column;padding:0 0 10px 16px;position:relative;overflow:hidden;border:1px solid rgba(178,255,89,0.25);background:rgba(178,255,89,0.03);box-shadow:inset 0 0 24px rgba(178,255,89,0.07),0 0 16px rgba(178,255,89,0.08);max-height:210px;}
 .blk.eng{border-color:rgba(0,176,255,0.25);background:rgba(0,176,255,0.03);box-shadow:inset 0 0 24px rgba(0,176,255,0.07),0 0 16px rgba(0,176,255,0.08);}
 .blk-corner{position:absolute;width:10px;height:10px;}
 .blk-corner.tl{top:0;left:0;border-top:2px solid var(--lime);border-left:2px solid var(--lime);}
@@ -79,6 +99,7 @@ body{background:#020508;display:flex;align-items:center;justify-content:center;f
 
 .status-dot{position:absolute;top:10px;right:12px;width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime);animation:blink 1.2s ease-in-out infinite;}
 .blk.eng .status-dot{background:var(--blue);box-shadow:0 0 8px var(--blue);animation:blink 1.2s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.15}}
 
 .row{font-size:12.5px;line-height:1.7;color:rgba(255,255,255,0.9);white-space:nowrap;overflow:hidden;display:none;font-weight:300;padding-left:4px;}
 .row b{font-weight:700;color:#fff;}
@@ -187,7 +208,6 @@ body{background:#020508;display:flex;align-items:center;justify-content:center;f
 </div>
 
 <script>
-// (All scripts remain identical as per request)
 const DATA = {
   "Sikar":   {m:["<b>89 Students</b> scored 700+ in NEET","5 AIIMS Delhi Selections — 2024","Regional top rank hub — Shekhawati","<b>AIR 1</b> — Sneha Agarwal, Sikar","<b>AIR 34</b> — Priya Sharma, Sikar"],e:["<b>112 Students</b> @ 99.8%ile+","38 JEE Advanced Clearances — 2024","Technical command of Shekhawati","<b>AIR 87</b> — Dev Sharma, Sikar","<b>AIR 210</b> — Arjun Kumar, Sikar"]},
   "Jaipur":  {m:["140 Students scored 650+ in NEET","SMS Medical College — 22 Selections","98% Qualification Rate — 2024","AIIMS Delhi — 3 Selections","<b>AIR 12</b> — Rahul Gupta, Jaipur"],e:["85 Students @ 99.9%ile — 2024","IIT Bombay CS — 6 Selections","38 JEE Advanced Clearances","NIT Jaipur — 18 Selections","<b>AIR 5</b> — Piyush Jain, Jaipur"]},
@@ -198,8 +218,9 @@ const DATA = {
   "Ajmer":   {m:["80 Students scored 670+ — 2024","JLN Medical College — 12 Selections","<b>AIR 45</b> — Meera Singh, Ajmer","<b>AIR 112</b> — Pooja Agarwal, Ajmer"],e:["90 Students @ 99%ile+ — 2024","NIT Jaipur — top selections","<b>AIR 145</b> — Vivek Pareek, Ajmer","<b>AIR 230</b> — Suresh Yadav, Ajmer"]},
   "Udaipur": {m:["70 Students scored 690+ — 2024","RNT Medical — 10 Selections","<b>AIR 22</b> — Kavya Rathore, Udaipur","<b>AIR 78</b> — Deepa Meena, Udaipur"],e:["60 Students @ 99%ile+ — 2024","MNIT Jaipur — key selections","<b>AIR 190</b> — Harsh Verma, Udaipur","<b>AIR 312</b> — Amit Joshi, Udaipur"]},
 };
-const FB={m:["Results coming soon","Strong NEET pipeline","Regional talent development"],e:["Results coming soon","Strong JEE pipeline","Regional talent development"]};
+const FB={m:["Results coming soon","Strong NEET pipeline","Regional hub"],e:["Results coming soon","Strong JEE pipeline","Regional hub"]};
 const centroids={};
+
 async function showLoading(loadId,listId){
   const loading=document.getElementById(loadId),list=document.getElementById(listId);
   list.innerHTML='';loading.classList.add('active');loading.style.display='block';
@@ -232,6 +253,7 @@ async function select(name){
   await showLoading('med-loading','med-list');await stream('med-list',d.m);
   await showLoading('eng-loading','eng-list');await stream('eng-list',d.e);
 }
+
 (function(){
   const viewport=document.getElementById('map-viewport'),mover=document.getElementById('map-mover');
   let scale=1,tx=0,ty=0,lastDist=null,drag=false,sx=0,sy=0,stx=0,sty=0;
@@ -245,6 +267,7 @@ async function select(name){
   window.addEventListener('mousemove',e=>{if(!drag)return;tx=stx+(e.clientX-sx);ty=sty+(e.clientY-sy);apply();});
   window.addEventListener('mouseup',()=>{drag=false;viewport.style.cursor='grab';});
 })();
+
 (async function(){
   const svg=document.getElementById('rj');let gj;
   const names=['Jaipur','Jodhpur','Kota','Ajmer','Bikaner','Udaipur','Sikar','Dausa','Alwar','Barmer','Nagaur','Churu'];
