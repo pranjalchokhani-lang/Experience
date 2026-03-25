@@ -50,7 +50,15 @@ html,body{
 .body{flex:1;display:grid;grid-template-columns:3fr 2fr;position:relative;z-index:2;overflow:hidden;min-height:0;}
 
 /* MAP */
-.map-panel{position:relative;overflow:hidden;border-right:1px solid rgba(0,229,255,0.18);background:#000;display:flex;flex-direction:column;}
+.map-panel {
+    position: relative;
+    overflow: auto; /* Changed from hidden to allow scrolling/zooming */
+    border-right: 1px solid rgba(0,229,255,0.18);
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    touch-action: none; /* We will handle touch via JS */
+}
 .map-label{position:relative;height:62px;z-index:10;pointer-events:none;display:flex;align-items:flex-end;padding:0 16px 8px 16px;background:rgba(2,5,8,0.95);border-bottom:1px solid rgba(0,229,255,0.15);flex-shrink:0;}
 .map-label .wtag{margin-bottom:0;animation:blink 1.2s ease-in-out infinite;}
 .map-viewport{position:relative;flex:1;overflow:hidden;cursor:grab;background:#000;}
