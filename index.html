@@ -209,427 +209,278 @@ html,body{
 
 <script>
 const DATA = {
-  "Jaipur": {
-    m: [
-      "<b>6 Allenites</b> stormed the national top 100 🔥",
-      "Every 3rd doctor at SMS Jaipur is an Allenite 🔥",
-      "<b>Parth Khandelwal</b> — AIR 10 (715/720), NEET '23 🚀",
-      "<b>Tanishak Yadav</b> — AIR 37 (715/720), NEET '24 🚀",
-      "<b>Priyanshi Garg</b> — AIR 66 (710/720), NEET '23 🚀"
-    ],
-    e: [
-      "<b>2 Allenites</b> in JEE Advanced national top 100 🔥",
-      "69 Jaipur Allenites sitting in IIT Delhi right now 🔥",
-      "<b>Saksham Khandelwal</b> — IIT Bombay CS, AIR 60 ('24) 🚀",
-      "<b>Aryaman Dev Verma</b> — IIT Delhi CS, AIR 93 ('25) 🚀",
-      "<b>Rishika Garg</b> — IIT Delhi CS, AIR 419 ('23) 🚀"
-    ]
-  },
-  "Dausa": {
-    m: [
-      "<b>Mayank Kholwad</b> cracked NEET '25 with AIR 380 (623/720) 🚀",
-      "<b>Mayank Sharma</b> stormed NEET '23 with AIR 389 (696/720) 🚀",
-      "<b>Akshat Bamor</b> nailed NEET '25 with AIR 1,048 (605/720)",
-      "<b>Deepak Singh Gurjar</b> cracked NEET '25 with AIR 1,259 (601/720)"
-    ],
-    e: [
-      "Dausa Allenites sitting in <b>10 different IITs</b> right now 🔥",
-      "<b>Ishan Khandelwal</b> bagged an IIT Delhi seat — AIR 226 ('23) 🚀",
-      "<b>Jayansh Khandelwal</b> clinched an IIT Guwahati seat — AIR 805 ('24)",
-      "<b>Kushal Jain</b> nailed an IIT Kanpur Elec seat — AIR 2,267 ('24)"
-    ]
-  },
-  "Alwar": {
-    m: [
-      "<b>Dev Bansal</b> stormed NEET '23 with AIR 393 (696/720) 🚀",
-      "<b>Priyanshu Soni</b> cracked NEET '25 with AIR 807 (610/720)",
-      "<b>Jahnvi Yadav</b> nailed NEET '23 with AIR 2,181 (675/720)",
-      "<b>Sakshi Agrawal</b> clinched a GMC seat with AIR 2,426 (673/720) ('23)"
-    ],
-    e: [
-      "Alwar Allenites sitting in <b>13 different IITs</b> right now 🔥",
-      "<b>Yug Sharma</b> bagged an IIT BHU CS seat — AIR 774 ('24)",
-      "<b>Gaurav Rao</b> clinched an IIT Delhi Elec seat — AIR 1,607 ('23)",
-      "<b>Antima</b> stormed an IIT Roorkee Electronics seat — AIR 6,534 ('23)"
-    ]
-  },
-  "Bharatpur": {
-    m: [
-      "<b>14 Allenites</b> nailed GMC seats 🔥",
-      "<b>Prashansha Sethi</b> cracked NEET '24 with AIR 6,253 (682/720)",
-      "<b>Hardik Agrawal</b> stormed NEET '24 with AIR 6,344 (682/720)",
-      "<b>Gagan Dhakad</b> nailed a GMC seat with 675 marks ('24)"
-    ],
-    e: [
-      "<b>Harsh Goyal</b> bagged an IIT Roorkee CS seat — AIR 397 ('23) 🚀",
-      "<b>Aman Gupta</b> clinched an IIT Mandi CS seat — AIR 2,381 ('24)",
-      "<b>Khushi Garg</b> stormed an IIT Gandhinagar CS seat — AIR 9,187 ('24)",
-      "Bharatpur Allenites sitting in 5 different IITs right now"
-    ]
-  },
-  "Karauli": {
-    m: [
-      "<b>Ansh Gupta</b> stormed NEET '23 with AIR 836 (690/720)",
-      "<b>Aditya Mittal</b> nailed a GMC seat — AIR 5,985 (655/720) ('23)",
-      "<b>Kunal Sharma</b> cracked a GMC seat with 643 marks ('23)"
-    ],
-    e: [
-      "<b>Mayank Goyal</b> bagged an IIT Kharagpur CS seat — AIR 230 ('23) 🚀",
-      "<b>Bhavesh Gupta</b> clinched an IIT Delhi seat — AIR 871 ('25)",
-      "Karauli Allenites sitting in 4 different IITs right now 🔥"
-    ]
-  },
   "Sawai Madhopur": {
-    m: [
+    "m": [
       "<b>2 Allenites</b> stormed the national top 500 🔥",
       "<b>Satyendra Kumar</b> nailed NEET '23 with AIR 189 (701/720) 🚀",
       "<b>Anushka Doi</b> cracked NEET '24 with AIR 469 (705/720) 🚀",
       "<b>Tanay Gupta</b> clinched a GMC seat with AIR 2,828 (670/720) ('23)"
     ],
-    e: [
-      "Karauli's <b>Mayank Goyal</b> — IIT Kharagpur CS, AIR 230 ('23) 🚀",
-      "Kota's <b>Harshit Rana</b> — IIT Kharagpur CS, AIR 428 ('25) 🚀",
-      "Tonk's <b>Vidhi Jain</b> — IIT Roorkee Mech, AIR 7,153 ('23)"
+    "e": [
+      "From the region, Karauli's <b>Mayank Goyal</b> — IIT Kharagpur CS, AIR 230 ('23) 🚀",
+      "From the region, Kota's <b>Harshit Rana</b> — IIT Kharagpur CS, AIR 428 ('25) 🚀",
+      "From the region, Tonk's <b>Vidhi Jain</b> — IIT Roorkee Mech, AIR 7,153 ('23)"
     ]
   },
   "Tonk": {
-    m: [
+    "m": [
       "<b>Harit Mangal Gupta</b> nailed a GMC seat with 674 marks ('24)",
       "<b>Radhika Jangid</b> clinched a GMC seat with 630 marks ('23)",
-      "Jaipur's <b>Parth Khandelwal</b> — AIR 10 (715/720), NEET '23 🚀"
+      "Nearby, Jaipur's <b>Parth Khandelwal</b> — AIR 10 (715/720), NEET '23 🚀"
     ],
-    e: [
+    "e": [
       "<b>Vidhi Jain</b> bagged an IIT Roorkee Mech seat — AIR 7,153 ('23)",
       "<b>Mahima Jain</b> clinched an IIT Roorkee Chem seat — AIR 12,331 ('25)",
-      "Jaipur's <b>Saksham Khandelwal</b> — IIT Bombay CS, AIR 60 ('24) 🚀"
-    ]
-  },
-  "Kota": {
-    m: [
-      "Every <b>4th doctor</b> walking into GMC Kota is an Allenite 🔥",
-      "ALLENites from Kota storm top GMCs every year",
-      "Bundi's every <b>5th doctor</b> at GMC Bundi is an Allenite"
-    ],
-    e: [
-      "<b>Harshit Rana</b> bagged an IIT Kharagpur CS seat — AIR 428 ('25) 🚀",
-      "ALLENites from Kota sitting in IITs across the country 🔥"
+      "Nearby, Jaipur's <b>Saksham Khandelwal</b> — IIT Bombay CS, AIR 60 ('24) 🚀"
     ]
   },
   "Bundi": {
-    m: [
+    "m": [
       "Every <b>5th doctor</b> walking into GMC Bundi is an Allenite 🔥",
-      "Sawai Madhopur's <b>Satyendra Kumar</b> — AIR 189 (701/720) 🚀",
-      "Sawai Madhopur's <b>Anushka Doi</b> — AIR 469 (705/720) 🚀"
+      "From the region, Sawai Madhopur's <b>Satyendra Kumar</b> — AIR 189 (701/720) 🚀",
+      "From the region, Sawai Madhopur's <b>Anushka Doi</b> — AIR 469 (705/720) 🚀"
     ],
-    e: [
-      "Kota's <b>Harshit Rana</b> — IIT Kharagpur CS, AIR 428 ('25) 🚀",
-      "Tonk's <b>Vidhi Jain</b> — IIT Roorkee Mech, AIR 7,153 ('23)",
+    "e": [
+      "Nearby, Kota's <b>Harshit Rana</b> — IIT Kharagpur CS, AIR 428 ('25) 🚀",
+      "Nearby, Tonk's <b>Vidhi Jain</b> — IIT Roorkee Mech, AIR 7,153 ('23)",
       "ALLENites from this belt sitting in IITs across the country 🔥"
     ]
   },
   "Baran": {
-    m: [
-      "Sawai Madhopur's <b>Satyendra Kumar</b> — AIR 189 (701/720) 🚀",
-      "Sawai Madhopur's <b>Anushka Doi</b> — AIR 469 (705/720) 🚀",
+    "m": [
+      "From the region, Sawai Madhopur's <b>Satyendra Kumar</b> — AIR 189 (701/720) 🚀",
+      "From the region, Sawai Madhopur's <b>Anushka Doi</b> — AIR 469 (705/720) 🚀",
       "ALLENites from Baran crack GMC seats every year"
     ],
-    e: [
+    "e": [
       "<b>Somya Agrawal</b> bagged an IIT Roorkee Elec seat — AIR 2,033 ('24)",
-      "Kota's <b>Harshit Rana</b> — IIT Kharagpur CS, AIR 428 ('25) 🚀",
-      "Jhalawar's <b>Yuvraj Jain</b> — IIT BHU, AIR 7,703 ('24)"
+      "Nearby, Kota's <b>Harshit Rana</b> — IIT Kharagpur CS, AIR 428 ('25) 🚀",
+      "Nearby, Jhalawar's <b>Yuvraj Jain</b> — IIT BHU, AIR 7,703 ('24)"
     ]
   },
   "Jhalawar": {
-    m: [
-      "Kota's every <b>4th doctor</b> at GMC Kota is an Allenite 🔥",
+    "m": [
+      "Nearby, Kota's every <b>4th doctor</b> at GMC Kota is an Allenite 🔥",
       "ALLENites from Jhalawar crack top medical colleges every year",
       "Kota — Allen's strongest belt in Rajasthan"
     ],
-    e: [
+    "e": [
       "<b>Yuvraj Jain</b> clinched an IIT BHU seat — AIR 7,703 ('24)",
-      "Kota's <b>Harshit Rana</b> — IIT Kharagpur CS, AIR 428 ('25) 🚀",
-      "Baran's <b>Somya Agrawal</b> — IIT Roorkee Elec, AIR 2,033 ('24)"
+      "Nearby, Kota's <b>Harshit Rana</b> — IIT Kharagpur CS, AIR 428 ('25) 🚀",
+      "From the region, Baran's <b>Somya Agrawal</b> — IIT Roorkee Elec, AIR 2,033 ('24)"
     ]
   },
   "Chittorgarh": {
-    m: [
-      "Udaipur's every <b>4th doctor</b> at RNT is an Allenite 🔥",
-      "Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
+    "m": [
+      "From the region, Udaipur's every <b>4th doctor</b> at RNT is an Allenite 🔥",
+      "Nearby, Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
       "ALLENites from Chittorgarh crack top medical colleges every year"
     ],
-    e: [
-      "Kota's <b>Harshit Rana</b> — IIT Kharagpur CS, AIR 428 ('25) 🚀",
-      "Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25)",
-      "Bhilwara's <b>Atharva Toshniwal</b> — IIT Roorkee, AIR 9,374 ('25)"
+    "e": [
+      "Nearby, Kota's <b>Harshit Rana</b> — IIT Kharagpur CS, AIR 428 ('25) 🚀",
+      "Nearby, Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25)",
+      "Nearby, Bhilwara's <b>Atharva Toshniwal</b> — IIT Roorkee, AIR 9,374 ('25)"
     ]
   },
   "Bhilwara": {
-    m: [
+    "m": [
       "<b>Saloni Jain</b> nailed a GMC seat with 654 marks ('24)",
-      "Ajmer's <b>Gauranshi Agarwal</b> — AIR 4,473 (686/720), NEET '24",
-      "Ajmer's <b>Vedant Pareek</b> — AIR 3,406 (666/720), NEET '23"
+      "From the region, Ajmer's <b>Gauranshi Agarwal</b> — AIR 4,473 (686/720), NEET '24",
+      "From the region, Ajmer's <b>Vedant Pareek</b> — AIR 3,406 (666/720), NEET '23"
     ],
-    e: [
+    "e": [
       "<b>Atharva Toshniwal</b> bagged an IIT Roorkee seat — AIR 9,374 ('25)",
       "<b>Navdeep Singh Chhabra</b> clinched an IIT Kharagpur seat — AIR 10,610 ('23)",
-      "Ajmer's <b>Rishika Garg</b> — IIT Delhi CS, AIR 419 ('23) 🚀"
-    ]
-  },
-  "Udaipur": {
-    m: [
-      "Every <b>4th doctor</b> walking into RNT Medical College is an Allenite 🔥",
-      "<b>Yashaswi Jain</b> stormed NEET '24 with AIR 2,852 (692/720)",
-      "<b>Harshit Sahu</b> nailed a GMC seat with 612 marks ('23)"
-    ],
-    e: [
-      "<b>Tanush Mandawara</b> bagged an IIT Delhi seat — AIR 1,022 ('25)",
-      "ALLENites from Udaipur sitting in IITs across the country 🔥"
+      "Nearby, Ajmer's <b>Rishika Garg</b> — IIT Delhi CS, AIR 419 ('23) 🚀"
     ]
   },
   "Dungarpur": {
-    m: [
-      "Udaipur's every <b>4th doctor</b> at RNT is an Allenite 🔥",
-      "Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
-      "Sirohi's <b>Vidhi Rajpurohit</b> cracked NEET '25 with AIR 5,609 (569/720)"
+    "m": [
+      "From the region, Udaipur's every <b>4th doctor</b> at RNT is an Allenite 🔥",
+      "Nearby, Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
+      "From the region, Sirohi's <b>Vidhi Rajpurohit</b> cracked NEET '25 with AIR 5,609 (569/720)"
     ],
-    e: [
-      "Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25)",
+    "e": [
+      "Nearby, Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25)",
       "ALLENites from this belt sitting in IITs across the country 🔥"
     ]
   },
   "Banswara": {
-    m: [
-      "Udaipur's every <b>4th doctor</b> at RNT is an Allenite 🔥",
-      "Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
+    "m": [
+      "From the region, Udaipur's every <b>4th doctor</b> at RNT is an Allenite 🔥",
+      "Nearby, Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
       "ALLENites from Banswara crack top medical colleges every year"
     ],
-    e: [
-      "Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25)",
+    "e": [
+      "Nearby, Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25)",
       "ALLENites from this belt sitting in IITs across the country 🔥"
     ]
   },
   "Pratapgarh": {
-    m: [
-      "Udaipur's every <b>4th doctor</b> at RNT is an Allenite 🔥",
-      "Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
-      "ALLENites from Pratapgarh crack top medical colleges every year"
+    "m": [
+      "<b>Gautam Prasad</b> nailed a GMC seat with 635 marks ('23)",
+      "Nearby, Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
+      "Allen students from Pratapgarh crack top medical colleges every year"
     ],
-    e: [
-      "Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25)",
-      "ALLENites from this belt sitting in IITs across the country 🔥"
+    "e": [
+      "<b>Harshdeep Singh</b> — IIT Madras ('23)",
+      "Nearby, Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25) 🚀",
+      "From the region, Banswara's <b>Aryan Meena</b> — IIT Roorkee ('24)"
     ]
   },
   "Rajsamand": {
-    m: [
-      "Udaipur's every <b>4th doctor</b> at RNT is an Allenite 🔥",
-      "Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
+    "m": [
+      "From the region, Udaipur's every <b>4th doctor</b> at RNT is an Allenite 🔥",
+      "Nearby, Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
       "ALLENites from Rajsamand crack top medical colleges every year"
     ],
-    e: [
-      "Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25)",
-      "Bhilwara's <b>Atharva Toshniwal</b> — IIT Roorkee, AIR 9,374 ('25)",
-      "Pali's <b>Chandraveer Singh</b> — IIT BHU, AIR 9,736 ('23)"
+    "e": [
+      "Nearby, Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25)",
+      "Nearby, Bhilwara's <b>Atharva Toshniwal</b> — IIT Roorkee, AIR 9,374 ('25)",
+      "From the region, Pali's <b>Chandraveer Singh</b> — IIT BHU, AIR 9,736 ('23)"
     ]
   },
   "Sirohi": {
-    m: [
+    "m": [
       "<b>Vidhi Rajpurohit</b> cracked NEET '25 with AIR 5,609 (569/720)",
       "<b>Khushi Hussain</b> nailed a GMC seat with 620 marks ('23)",
-      "Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24"
+      "Nearby, Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24"
     ],
-    e: [
+    "e": [
       "<b>Ayush Bairwa</b> clinched an IIT Roorkee Elec seat — AIR 17,868 ('23)",
-      "Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25)",
-      "Jalore's <b>Tanish Kumar</b> — IIT Ropar CS, AIR 3,897 ('24)"
+      "Nearby, Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25)",
+      "Nearby, Jalore's <b>Tanish Kumar</b> — IIT Ropar CS, AIR 3,897 ('24)"
     ]
   },
   "Pali": {
-    m: [
-      "Jodhpur's every <b>4th doctor</b> at SNMC is an Allenite 🔥",
-      "Barmer's <b>Manohar</b> cracked NEET '25 with AIR 2,023 (592/720)",
-      "Ajmer's <b>Gauranshi Agarwal</b> — AIR 4,473 (686/720), NEET '24"
-    ],
-    e: [
-      "<b>Chandraveer Singh</b> bagged an IIT BHU seat — AIR 9,736 ('23)",
-      "Ajmer's <b>Rishika Garg</b> — IIT Delhi CS, AIR 419 ('23) 🚀",
-      "Jodhpur's <b>Shivansh Agarwal</b> — IIT Delhi, AIR 1,032 ('25)"
-    ]
-  },"Phalodi": {
     "m": [
-      "Jodhpur's every <b>4th doctor</b> at SNMC is an Allenite 🔥",
-      "Jodhpur's <b>Jayvardhan Singh Chouhan</b> — AIR 3,061 (669/720), NEET '23",
+      "From the region,  every <b>4th doctor</b> at SNMC Jodhpur is an Allenite 🔥",
+      "Nearby, Barmer's <b>Manohar</b> cracked NEET '25 with AIR 2,023 (592/720)",
+      "Nearby, Ajmer's <b>Gauranshi Agarwal</b> — AIR 4,473 (686/720), NEET '24"
+    ],
+    "e": [
+      "<b>Chandraveer Singh</b> bagged an IIT BHU seat — AIR 9,736 ('23)",
+      "Nearby, Ajmer's <b>Rishika Garg</b> — IIT Delhi CS, AIR 419 ('23) 🚀",
+      "Nearby, Jodhpur's <b>Shivansh Agarwal</b> — IIT Delhi, AIR 1,032 ('25)"
+    ]
+  },
+  "Phalodi": {
+    "m": [
+      "From the region, Jodhpur's every <b>4th doctor</b> at SNMC is an Allenite 🔥",
+      "Nearby, Jodhpur's <b>Jayvardhan Singh Chouhan</b> — AIR 3,061 (669/720), NEET '23",
       "Allen students from Phalodi crack top medical colleges every year"
     ],
     "e": [
-      "Jodhpur's <b>Shivansh Agarwal</b> — IIT Delhi, AIR 1,032 ('25) 🚀",
-      "Jodhpur's <b>Soham Kejriwal</b> — IIT Kharagpur, AIR 1,378 ('23)",
-      "Jodhpur's <b>Rounak Sambhwani</b> — IIT Roorkee, AIR 6,864 ('24)"
-    ]
-  },
-  "Jodhpur": {
-    m: [
-      "Every <b>4th doctor</b> walking into SNMC Jodhpur is an Allenite 🔥",
-      "<b>Jayvardhan Singh Chouhan</b> cracked NEET '23 with AIR 3,061 (669/720)",
-      "ALLENites from Jodhpur storm top medical colleges every year"
-    ],
-    e: [
-      "<b>Shivansh Agarwal</b> clinched an IIT Delhi seat — AIR 1,032 ('25)",
-      "<b>Soham Kejriwal</b> bagged an IIT Kharagpur Elec seat — AIR 1,378 ('23)",
-      "Jodhpur Allenites sitting in <b>5 different IITs</b> right now 🔥"
+      "Nearby, Jodhpur's <b>Shivansh Agarwal</b> — IIT Delhi, AIR 1,032 ('25) 🚀",
+      "Nearby, Jodhpur's <b>Soham Kejriwal</b> — IIT Kharagpur, AIR 1,378 ('23)",
+      "Nearby, Jodhpur's <b>Rounak Sambhwani</b> — IIT Roorkee, AIR 6,864 ('24)"
     ]
   },
   "Barmer": {
-    m: [
+    "m": [
       "<b>Manohar</b> cracked NEET '25 with AIR 2,023 (592/720)",
       "<b>Garima Sisodiya</b> stormed NEET '25 with AIR 5,677 (569/720)",
       "<b>Chetna Beniwal</b> nailed a GMC seat in NEET '25"
     ],
-    e: [
-      "Jodhpur's <b>Shivansh Agarwal</b> — IIT Delhi, AIR 1,032 ('25)",
-      "Jodhpur's <b>Soham Kejriwal</b> — IIT Kharagpur Elec, AIR 1,378 ('23)",
-      "Jaisalmer's <b>Yash Choudhary</b> — IIT Guwahati Data Science, AIR 2,326 ('25)"
+    "e": [
+      "Nearby, Jodhpur's <b>Shivansh Agarwal</b> — IIT Delhi, AIR 1,032 ('25)",
+      "Nearby, Jodhpur's <b>Soham Kejriwal</b> — IIT Kharagpur Elec, AIR 1,378 ('23)",
+      "From the region, Jaisalmer's <b>Yash Choudhary</b> — IIT Guwahati Data Science, AIR 2,326 ('25)"
     ]
   },
   "Jaisalmer": {
-    m: [
+    "m": [
       "<b>Akram Khan</b> clinched a GMC seat — AIR 6,737 (651/720) ('23)",
-      "Barmer's <b>Manohar</b> cracked NEET '25 with AIR 2,023 (592/720)",
-      "Jodhpur's every <b>4th doctor</b> at SNMC is an Allenite 🔥"
+      "Nearby, Barmer's <b>Manohar</b> cracked NEET '25 with AIR 2,023 (592/720)",
+      "From the region, Jodhpur's every <b>4th doctor</b> at SNMC is an Allenite 🔥"
     ],
-    e: [
+    "e": [
       "<b>Yash Choudhary</b> bagged an IIT Guwahati Data Science seat — AIR 2,326 ('25)",
       "<b>Deepak Soni</b> clinched an IIT Goa Maths & Computing seat — AIR 8,431 ('23)",
-      "Jodhpur's <b>Shivansh Agarwal</b> — IIT Delhi, AIR 1,032 ('25)"
-    ]
-  },
-  "Nagaur": {
-    m: [
-      "<b>Hitarth Vyas</b> stormed NEET '24 with AIR 1,001 (701/720) 🔥",
-      "<b>Aarav Manda</b> nailed a GMC seat with 610 marks ('23)",
-      "ALLENites from Nagaur crack top GMCs every year"
-    ],
-    e: [
-      "<b>Parth Agarwal</b> clinched an IIT Delhi Elec seat — AIR 613 ('24) 🚀",
-      "<b>Harshit Ghotiya</b> bagged an IIT Roorkee seat — AIR 10,105 ('25)",
-      "<b>Tanishq Soni</b> nailed an IIT Kanpur seat — AIR 12,842 ('23)"
-    ]
-  },
-  "Ajmer": {
-    m: [
-      "Every <b>5th doctor</b> walking into JLN Medical College is an Allenite 🔥",
-      "<b>Gauranshi Agarwal</b> nailed NEET '24 with AIR 4,473 (686/720)",
-      "<b>Vedant Pareek</b> stormed NEET '23 with AIR 3,406 (666/720)"
-    ],
-    e: [
-      "<b>Rishika Garg</b> bagged an IIT Delhi CS seat — AIR 419 ('23) 🚀",
-      "<b>Mohit Somai</b> clinched an IIT Roorkee Electronics seat — AIR 1,466 ('25)",
-      "Ajmer Allenites sitting in <b>7 different IITs</b> right now 🔥"
+      "Nearby, Jodhpur's <b>Shivansh Agarwal</b> — IIT Delhi, AIR 1,032 ('25)"
     ]
   },
   "Bikaner": {
-    m: [
+    "m": [
       "Every <b>5th doctor</b> walking into SP Medical College is an Allenite 🔥",
       "<b>Ayush Shekhawat</b> nailed a GMC seat with 676 marks ('24)",
-      "Nagaur's <b>Hitarth Vyas</b> stormed NEET '24 with AIR 1,001 (701/720) 🔥"
+      "From the region, Nagaur's <b>Hitarth Vyas</b> stormed NEET '24 with AIR 1,001 (701/720) 🔥"
     ],
-    e: [
-      "Nagaur's <b>Parth Agarwal</b> — IIT Delhi Elec, AIR 613 ('24) 🚀",
+    "e": [
+      "Nearby, Nagaur's <b>Parth Agarwal</b> — IIT Delhi Elec, AIR 613 ('24) 🚀",
       "<b>Snehit Jain</b> clinched an IIT Jodhpur seat — AIR 13,965 ('25)",
       "ALLENites from Bikaner sitting in IITs across the country 🔥"
     ]
   },
   "Churu": {
-    m: [
+    "m": [
       "<b>Rudra Saraswat</b> nailed a GMC seat with 625 marks ('23)",
       "<b>Shikhar Somara</b> stormed a GMC seat with 647 marks ('24)",
-      "Nagaur's <b>Hitarth Vyas</b> cracked NEET '24 with AIR 1,001 (701/720) 🔥"
+      "From the region, Nagaur's <b>Hitarth Vyas</b> cracked NEET '24 with AIR 1,001 (701/720) 🔥"
     ],
-    e: [
+    "e": [
       "<b>Khush Marodia</b> clinched an IIT Jodhpur seat — AIR 15,401 ('24)",
-      "Nagaur's <b>Parth Agarwal</b> — IIT Delhi Elec, AIR 613 ('24) 🚀",
-      "Jhunjhunu's <b>Neel Sumangesh</b> — IIT Guwahati CS, AIR 5,587 ('24)"
+      "Nearby, Nagaur's <b>Parth Agarwal</b> — IIT Delhi Elec, AIR 613 ('24) 🚀",
+      "Nearby, Jhunjhunu's <b>Neel Sumangesh</b> — IIT Guwahati CS, AIR 5,587 ('24)"
     ]
   },
   "Jhunjhunu": {
-    m: [
+    "m": [
       "<b>Umang</b> nailed a GMC seat with 611 marks ('23)",
-      "Sikar's <b>Vijay Singh Gurjar</b> cracked a GMC seat with 643 marks ('23)",
+      "Nearby, Sikar's <b>Vijay Singh Gurjar</b> cracked a GMC seat with 643 marks ('23)",
       "ALLENites from Jhunjhunu crack top medical colleges every year"
     ],
-    e: [
+    "e": [
       "<b>Neel Sumangesh</b> bagged an IIT Guwahati CS seat — AIR 5,587 ('24)",
       "<b>Aniruddh Kumar Sharma</b> clinched an IIT Bombay Maths seat — AIR 6,868 ('23)",
       "ALLENites from Jhunjhunu sitting in IITs across the country 🔥"
     ]
   },
   "Sikar": {
-    m: [
+    "m": [
       "<b>Vijay Singh Gurjar</b> nailed a GMC seat with 643 marks ('23)",
       "<b>Kirtiman Samota</b> cracked a GMC seat with 639 marks ('23)",
       "<b>Minal Singh</b> stormed a GMC seat with 605 marks ('23)"
     ],
-    e: [
+    "e": [
       "<b>Ishant Agrawal</b> clinched an IIT Kanpur seat — AIR 7,337 ('23)",
-      "Jhunjhunu's <b>Neel Sumangesh</b> — IIT Guwahati CS, AIR 5,587 ('24)",
+      "Nearby, Jhunjhunu's <b>Neel Sumangesh</b> — IIT Guwahati CS, AIR 5,587 ('24)",
       "ALLENites from Sikar sitting in IITs across the country 🔥"
     ]
   },
   "Ganganagar": {
-    m: [
-      "Hanumangarh's <b>Prasoon Barayach</b> — AIR 1,697 (680/720), NEET '23",
-      "Hanumangarh's <b>Bharti</b> — AIR 3,931 (664/720), NEET '23",
-      "Bikaner's every <b>5th doctor</b> at SP Medical College is an Allenite 🔥"
+    "m": [
+      "From the region, Hanumangarh's <b>Prasoon Barayach</b> — AIR 1,697 (680/720), NEET '23",
+      "From the region, Hanumangarh's <b>Bharti</b> — AIR 3,931 (664/720), NEET '23",
+      "Nearby, Bikaner's every <b>5th doctor</b> at SP Medical College is an Allenite 🔥"
     ],
-    e: [
-      "Hanumangarh's <b>Janvi</b> — IIT Gandhinagar Chem ('23)",
-      "Hanumangarh's <b>Mahiman Bansal</b> — IIT BHU ('23)",
+    "e": [
+      "From the region, Hanumangarh's <b>Janvi</b> — IIT Gandhinagar Chem ('23)",
+      "From the region, Hanumangarh's <b>Mahiman Bansal</b> — IIT BHU ('23)",
       "ALLENites from this belt sitting in IITs across the country 🔥"
     ]
   },
-  "Hanumangarh": {
-    m: [
-      "<b>Prasoon Barayach</b> stormed NEET '23 with AIR 1,697 (680/720)",
-      "<b>Bharti</b> clinched NEET '23 with AIR 3,931 (664/720)",
-      "<b>Prem Kumar</b> nailed a GMC seat with 640 marks ('24)"
-    ],
-    e: [
-      "<b>Janvi</b> bagged an IIT Gandhinagar Chem seat — AIR 12,139 ('23)",
-      "<b>Mahiman Bansal</b> clinched an IIT BHU Ceramics seat — AIR 13,063 ('23)",
-      "ALLENites from Hanumangarh sitting in IITs across the country 🔥"
-    ]
-  },
   "Dholpur": {
-    m: [
+    "m": [
       "<b>Sanskriti Garg</b> nailed NEET '23 with AIR 6,113 (653/720)",
       "<b>Kratika Sharma</b> cracked a GMC seat with 606 marks ('23)",
-      "Sawai Madhopur's <b>Satyendra Kumar</b> — AIR 189 (701/720) 🚀"
+      "From the region, Sawai Madhopur's <b>Satyendra Kumar</b> — AIR 189 (701/720) 🚀"
     ],
-    e: [
-      "Karauli's <b>Mayank Goyal</b> — IIT Kharagpur CS, AIR 230 ('23) 🚀",
-      "Bharatpur's <b>Harsh Goyal</b> — IIT Roorkee CS, AIR 397 ('23) 🚀",
-      "Bharatpur's <b>Aman Gupta</b> — IIT Mandi CS, AIR 2,381 ('24)"
+    "e": [
+      "From the region, Karauli's <b>Mayank Goyal</b> — IIT Kharagpur CS, AIR 230 ('23) 🚀",
+      "From the region, Bharatpur's <b>Harsh Goyal</b> — IIT Roorkee CS, AIR 397 ('23) 🚀",
+      "From the region, Bharatpur's <b>Aman Gupta</b> — IIT Mandi CS, AIR 2,381 ('24)"
     ]
   },
   "Jalore": {
-    m: [
-      "<b>Bhagwati</b> nailed a GMC seat with AIR 22,081 ('25)",
-      "<b>Mahaveer Singh Rao</b> cracked a GMC seat with 590 marks ('23)",
-      "Barmer's <b>Manohar</b> cracked NEET '25 with AIR 2,023 (592/720)"
-    ],
-    e: [
-      "<b>Sarvan Suthar</b> bagged an IIT Ropar CS seat — AIR 4,522 ('23) 🚀",
-      "<b>Tanish Kumar</b> clinched an IIT Ropar CS seat — AIR 3,897 ('24) 🚀",
-      "Jalore Allenites sitting in top IITs across India 🔥"
-    ]
-  },"Jalore": {
     "m": [
       "<b>Sumeet Bishnoi</b> cracked NEET '24 with AIR 1,003 (705/720) 🔥",
       "<b>Sumeru</b> clinched a GMC seat with 665 marks ('24)",
-      "Sirohi's <b>Vidhi Rajpurohit</b> — AIR 5,609, NEET '25"
+      "Nearby, Sirohi's <b>Vidhi Rajpurohit</b> — AIR 5,609, NEET '25"
     ],
     "e": [
       "<b>Tanish Kumar</b> bagged an IIT Ropar CS seat — AIR 3,897 ('24) 🚀",
-      "<b>Bharat Kumar</b> — IIT BHU ('23)", // AIR 11,213 removed
+      "<b>Bharat Kumar</b> — IIT BHU ('23)",
       "Jalore Allenites are currently studying in 4 different IITs"
     ]
   },
@@ -637,58 +488,46 @@ const DATA = {
     "m": [
       "<b>Manohar</b> cracked NEET '25 with AIR 2,023 (592/720) 🚀",
       "<b>Mahendra Kumar</b> nailed a GMC seat with 650 marks ('24)",
-      "Barmer's <b>Nitesh</b> — AIR 3,342 (687/720), NEET '24"
+      "Nearby, Barmer's <b>Nitesh</b> — AIR 3,342 (687/720), NEET '24"
     ],
     "e": [
       "<b>Kushal Kanwar</b> bagged an IIT Roorkee seat ('24)",
       "<b>Bhupendra</b> — IIT Jodhpur ('23)",
-      "Jodhpur's <b>Shivansh Agarwal</b> — IIT Delhi, AIR 1,032 ('25) 🚀"
+      "Nearby, Jodhpur's <b>Shivansh Agarwal</b> — IIT Delhi, AIR 1,032 ('25) 🚀"
     ]
   },
   "Salumbar": {
     "m": [
-      "Udaipur's every <b>4th doctor</b> at RNT is an Allenite 🔥",
-      "Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
+      "From the region, Udaipur's every <b>4th doctor</b> at RNT is an Allenite 🔥",
+      "Nearby, Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
       "Allen students from Salumbar crack top GMCs every year"
     ],
     "e": [
-      "Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25) 🚀",
-      "Udaipur's <b>Arpit Jain</b> — IIT Bombay, AIR 2,341 ('24)",
-      "<b>Divyanshu Kalasua</b> — IIT Roorkee ('25)" 
-    ]
-  },
-  "Pratapgarh": {
-    "m": [
-      "<b>Gautam Prasad</b> nailed a GMC seat with 635 marks ('23)",
-      "Udaipur's <b>Yashaswi Jain</b> — AIR 2,852 (692/720), NEET '24",
-      "Allen students from Pratapgarh crack top medical colleges every year"
-    ],
-    "e": [
-      "<b>Harshdeep Singh</b> — IIT Madras ('23)",
-      "Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25) 🚀",
-      "Banswara's <b>Aryan Meena</b> — IIT Roorkee ('24)"
+      "Nearby, Udaipur's <b>Tanush Mandawara</b> — IIT Delhi, AIR 1,022 ('25) 🚀",
+      "Nearby, Udaipur's <b>Arpit Jain</b> — IIT Bombay, AIR 2,341 ('24)",
+      "<b>Divyanshu Kalasua</b> — IIT Roorkee ('25)"
     ]
   },
   "Beawar": {
     "m": [
       "<b>Megha Rawat</b> cracked NEET '24 with AIR 5,301 (685/720)",
       "<b>Harshit Sharma</b> nailed a GMC seat with 648 marks ('23)",
-      "Ajmer's <b>Gauranshi Agarwal</b> — AIR 4,473 (686/720), NEET '24"
+      "Nearby, Ajmer's <b>Gauranshi Agarwal</b> — AIR 4,473 (686/720), NEET '24"
     ],
     "e": [
       "<b>Gautam Chouhan</b> bagged an IIT Kanpur seat ('24)",
-      "Ajmer's <b>Rishika Garg</b> — IIT Delhi CS, AIR 419 ('23) 🚀",
-      "Ajmer's <b>Anshuman Jakhar</b> — IIT Roorkee, AIR 3,604 ('24)"
+      "Nearby, Ajmer's <b>Rishika Garg</b> — IIT Delhi CS, AIR 419 ('23) 🚀",
+      "Nearby, Ajmer's <b>Anshuman Jakhar</b> — IIT Roorkee, AIR 3,604 ('24)"
     ]
   },
   "DIDWANA-KUCHAMAN": {
     "m": [
-      "Nagaur's <b>Hitarth Vyas</b> stormed NEET '24 with AIR 1,001 (701/720) 🔥",
+      "From the region, Nagaur's <b>Hitarth Vyas</b> stormed NEET '24 with AIR 1,001 (701/720) 🔥",
       "<b>Aman Khan</b> clinched a GMC seat with 631 marks ('24)",
       "Allen students from Didwana crack top medical colleges every year"
     ],
     "e": [
-      "Nagaur's <b>Parth Agarwal</b> — IIT Delhi Elec, AIR 613 ('24) 🚀",
+      "Nearby, Nagaur's <b>Parth Agarwal</b> — IIT Delhi Elec, AIR 613 ('24) 🚀",
       "<b>Yuvraj Singh</b> — IIT Kharagpur ('23)",
       "<b>Mohit Dhaka</b> — IIT BHU ('24)"
     ]
@@ -697,36 +536,36 @@ const DATA = {
     "m": [
       "<b>Anjali Saini</b> cracked NEET '23 with AIR 1,482 (681/720) 🚀",
       "<b>Deepak Yadav</b> nailed a GMC seat with 661 marks ('24)",
-      "Jaipur's <b>Parth Khandelwal</b> — AIR 10 (715/720), NEET '23 🔥"
+      "Nearby, Jaipur's <b>Parth Khandelwal</b> — AIR 10 (715/720), NEET '23 🔥"
     ],
     "e": [
       "<b>Kunal Bhardwaj</b> — IIT Delhi, AIR 2,108 ('24)",
       "<b>Nikita Saini</b> — IIT Roorkee ('25)",
-      "Jaipur's <b>Saksham Khandelwal</b> — IIT Bombay CS, AIR 60 ('24) 🔥"
+      "Nearby, Jaipur's <b>Saksham Khandelwal</b> — IIT Bombay CS, AIR 60 ('24) 🔥"
     ]
   },
   "Deeg": {
     "m": [
-      "Bharatpur's <b>Prashansha Sethi</b> — AIR 6,253 (682/720), NEET '24",
+      "From the region, Bharatpur's <b>Prashansha Sethi</b> — AIR 6,253 (682/720), NEET '24",
       "<b>Rahul Chandel</b> nailed a GMC seat with 612 marks ('24)",
       "14 Allenites from the Bharatpur-Deeg belt nailed GMC seats 🔥"
     ],
     "e": [
-      "Bharatpur's <b>Harsh Goyal</b> — IIT Roorkee CS, AIR 397 ('23) 🚀",
+      "Nearby, Bharatpur's <b>Harsh Goyal</b> — IIT Roorkee CS, AIR 397 ('23) 🚀",
       "<b>Devashish</b> — IIT Guwahati Electronics ('24)",
-      "Bharatpur's <b>Aman Gupta</b> — IIT Mandi CS, AIR 2,381 ('24)"
+      "Nearby, Bharatpur's <b>Aman Gupta</b> — IIT Mandi CS, AIR 2,381 ('24)"
     ]
   },
   "Khairthal-Tijara": {
     "m": [
-      "Alwar's <b>Dev Bansal</b> stormed NEET '23 with AIR 393 (696/720) 🚀",
+      "From the region, Alwar's <b>Dev Bansal</b> stormed NEET '23 with AIR 393 (696/720) 🚀",
       "<b>Aryan Saini</b> cracked a GMC seat with 645 marks ('24)",
-      "Alwar's <b>Priyanshu Soni</b> — AIR 807 (610/720), NEET '25"
+      "Nearby, Alwar's <b>Priyanshu Soni</b> — AIR 807 (610/720), NEET '25"
     ],
     "e": [
-      "Alwar's <b>Yug Sharma</b> — IIT BHU CS, AIR 774 ('24) 🔥",
+      "Nearby, Alwar's <b>Yug Sharma</b> — IIT BHU CS, AIR 774 ('24) 🔥",
       "<b>Nikhil Yadav</b> — IIT Roorkee ('23)",
-      "Alwar's <b>Gaurav Rao</b> — IIT Delhi Elec, AIR 1,607 ('23)"
+      "Nearby, Alwar's <b>Gaurav Rao</b> — IIT Delhi Elec, AIR 1,607 ('23)"
     ]
   },
   "Dhaulpur": {
@@ -738,7 +577,7 @@ const DATA = {
     "e": [
       "<b>Piyush Singhal</b> bagged an IIT Kanpur seat ('24)",
       "<b>Saurabh Tyagi</b> — IIT BHU ('23)",
-      "Bharatpur's <b>Harsh Goyal</b> — IIT Roorkee CS, AIR 397 ('23) 🚀"
+      "From the region, Bharatpur's <b>Harsh Goyal</b> — IIT Roorkee CS, AIR 397 ('23) 🚀"
     ]
   }
 };;
