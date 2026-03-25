@@ -8,7 +8,7 @@
 :root{--c:#00e5ff;--cg:rgba(0,229,255,0.7);--lime:#b2ff59;--blue:#00b0ff;}
 *{margin:0;padding:0;box-sizing:border-box;cursor:crosshair;}
 
-/* FIX: Use 100dvh (Dynamic Viewport Height) to account for iPad browser bars */
+/* iPad Optimization: Use Dynamic Viewport Height */
 html,body{
     width:100%;
     height: 100dvh; 
@@ -21,10 +21,10 @@ html,body{
     color:#fff;
 }
 
-/* FIX: Container stays 1024x768 but "Scales Down" to fit the available screen */
+/* FIX: Standard iPad resolution 1024x768 with auto-scaling */
 .shell{
     position:relative;
-    width:1024px;
+    width:1024px; 
     height:768px;
     flex-shrink: 0;
     transform: scale(min(calc(100vw / 1040), calc(100dvh / 780)));
@@ -124,13 +124,6 @@ html,body{
         <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.85"/>
         <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.85"/>
       </linearGradient>
-      <linearGradient id="shine-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
-        <stop offset="30%"  stop-color="#ffffff" stop-opacity="0.7"/>
-        <stop offset="50%"  stop-color="#ffffff" stop-opacity="1"/>
-        <stop offset="70%"  stop-color="#ffffff" stop-opacity="0.7"/>
-        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-      </linearGradient>
       <linearGradient id="shine-glow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
         <stop offset="50%"  stop-color="#ffffff" stop-opacity="0.9"/>
@@ -139,7 +132,6 @@ html,body{
       <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     </defs>
     <polygon points="52,1.5 972,1.5 1022.5,52 1022.5,716 972,766.5 52,766.5 1.5,716 1.5,52" fill="none" stroke="url(#g-uniform)" stroke-width="2.5" filter="url(#glow)"/>
-    <polygon points="52,1.5 972,1.5 1022.5,52 1022.5,716 972,766.5 52,766.5 1.5,716 1.5,52" fill="none" stroke="rgba(0,229,255,0.18)" stroke-width="7"/>
     <path id="oct-path" fill="none" stroke="none" d="M52,1.5 L972,1.5 L1022.5,52 L1022.5,716 L972,766.5 L52,766.5 L1.5,716 L1.5,52 Z"/>
     <rect width="260" height="8" rx="4" fill="url(#shine-glow-grad)" filter="url(#glow)" transform="translate(-30,-6)">
       <animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#oct-path"/></animateMotion>
@@ -266,6 +258,21 @@ async function select(name){
   viewport.addEventListener('mousedown',e=>{drag=true;sx=e.clientX;sy=e.clientY;stx=tx;sty=ty;viewport.style.cursor='grabbing';});
   window.addEventListener('mousemove',e=>{if(!drag)return;tx=stx+(e.clientX-sx);ty=sty+(e.clientY-sy);apply();});
   window.addEventListener('mouseup',()=>{drag=false;viewport.style.cursor='grab';});
+  
+  // Touch Support
+  viewport.addEventListener('touchstart',e=>{
+    if(e.touches.length===1){drag=true;sx=e.touches[0].clientX;sy=e.touches[0].clientY;stx=tx;sty=ty;}
+    else if(e.touches.length===2){lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);}
+  });
+  viewport.addEventListener('touchmove',e=>{
+    if(e.touches.length===1 && drag){tx=stx+(e.touches[0].clientX-sx);ty=sty+(e.touches[0].clientY-sy);apply();}
+    else if(e.touches.length===2){
+      const dist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+      if(lastDist){scale=Math.min(12,Math.max(0.3,scale*(dist/lastDist)));apply();}
+      lastDist=dist;
+    }
+  });
+  viewport.addEventListener('touchend',()=>{drag=false;lastDist=null;});
 })();
 
 (async function(){
