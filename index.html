@@ -271,7 +271,7 @@ async function select(name){
 (async function(){
   const svg=document.getElementById('rj');let gj;
   const names=['Jaipur','Jodhpur','Kota','Ajmer','Bikaner','Udaipur','Sikar','Dausa','Alwar','Barmer','Nagaur','Churu'];
-  gj={{
+  gj={
     "type": "FeatureCollection",
     "features": [
         {
@@ -30677,7 +30677,7 @@ async function select(name){
         }
     ]
 }
-};
+;
   const VW=500,VH=520;let x0=Infinity,x1=-Infinity,y0=Infinity,y1=-Infinity;
   gj.features.forEach(f=>{const rings=f.geometry.type==='Polygon'?f.geometry.coordinates:f.geometry.coordinates.flat(1);rings.forEach(ring=>ring.forEach(([lo,la])=>{if(lo<x0)x0=lo;if(lo>x1)x1=lo;if(la<y0)y0=la;if(la>y1)y1=la;}));});
   const sc=Math.min((VW-20)/(x1-x0),(VH-20)/(y1-y0));const ox=(VW-(x1-x0)*sc)/2,oy=(VH-(y1-y0)*sc)/2;
