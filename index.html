@@ -2,38 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
 :root{--c:#00e5ff;--cg:rgba(0,229,255,0.7);--lime:#b2ff59;--blue:#00b0ff;}
 *{margin:0;padding:0;box-sizing:border-box;cursor:crosshair;}
-
-/* iPad Optimization: Use Dynamic Viewport Height */
-html,body{
-    width:100%;
-    height: 100dvh; 
-    overflow:hidden;
-    background:#020508;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-family:'Inter',sans-serif;
-    color:#fff;
-}
-
-/* FIX: Standard iPad resolution 1024x768 with auto-scaling */
-.shell{
-    position:relative;
-    width:1024px; 
-    height:768px;
-    flex-shrink: 0;
-    transform: scale(min(calc(100vw / 1040), calc(100dvh / 780)));
-    transform-origin: center center;
-    filter:drop-shadow(0 28px 48px rgba(0,0,0,0.9)) drop-shadow(0 0 35px rgba(0,229,255,0.3));
-}
-
+html,body{width:100%;height:100%;overflow:hidden;}
+body{background:#020508;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;color:#fff;}
+.shell{position:relative;width:1040px;height:760px;filter:drop-shadow(0 28px 48px rgba(0,0,0,0.9)) drop-shadow(0 0 35px rgba(0,229,255,0.3)) drop-shadow(0 0 80px rgba(0,229,255,0.1));}
 .shelf{position:absolute;bottom:-12px;left:52px;right:52px;height:13px;background:linear-gradient(180deg,rgba(0,229,255,0.2) 0%,rgba(0,0,0,0.8) 100%);clip-path:polygon(0 0,100% 0,calc(100% - 6px) 100%,6px 100%);}
-.card{width:1024px;height:768px;background:linear-gradient(160deg,#07101a 0%,#030810 60%,#050d18 100%);display:flex;flex-direction:column;position:relative;clip-path:polygon(52px 0%,calc(100% - 52px) 0%,100% 52px,100% calc(100% - 52px),calc(100% - 52px) 100%,52px 100%,0% calc(100% - 52px),0% 52px);overflow:hidden;}
+.card{width:1040px;height:760px;background:linear-gradient(160deg,#07101a 0%,#030810 60%,#050d18 100%);display:flex;flex-direction:column;position:relative;clip-path:polygon(52px 0%,calc(100% - 52px) 0%,100% 52px,100% calc(100% - 52px),calc(100% - 52px) 100%,52px 100%,0% calc(100% - 52px),0% 52px);overflow:hidden;}
 .card::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,229,255,0.012) 3px,rgba(0,229,255,0.012) 4px);pointer-events:none;z-index:1;}
 .border-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:200;overflow:visible;}
 
@@ -66,7 +43,7 @@ html,body{
 @keyframes pulse-out{0%{r:0;opacity:0.9;stroke-width:2}100%{r:28;opacity:0;stroke-width:0}}
 
 /* RIGHT PANEL */
-.right-panel{display:flex;flex-direction:column;padding:30px 18px;gap:16px;position:relative;z-index:2;}
+.right-panel{display:flex;flex-direction:column;padding:38px 18px 38px 18px;gap:18px;position:relative;z-index:2;}
 .rp-header{flex-shrink:0;}
 .wtag{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;color:rgba(0,229,255,0.75);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
 .ctag{font-size:22px;font-weight:700;color:#fff;text-shadow:0 0 14px rgba(255,255,255,0.2);line-height:1.1;}
@@ -92,6 +69,7 @@ html,body{
 .blk-title-wrap{position:relative;}
 .blk-title-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(178,255,89,0.18) 0%,rgba(178,255,89,0.07) 50%,rgba(178,255,89,0.01) 100%);pointer-events:none;z-index:0;}
 .blk.eng .blk-title-bg{background:linear-gradient(90deg,rgba(0,176,255,0.18) 0%,rgba(0,176,255,0.07) 50%,rgba(0,176,255,0.01) 100%);}
+.blk-header-bg{display:none;}
 .blk-title{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--lime);text-shadow:0 0 10px rgba(178,255,89,0.9);text-transform:uppercase;display:flex;align-items:center;padding:16px 10px 15px 16px;position:relative;z-index:1;}
 .blk.eng .blk-title{color:var(--blue);text-shadow:0 0 10px rgba(0,176,255,0.9);}
 .blk-title-divider{display:block;height:1px;background:rgba(178,255,89,0.35);margin-bottom:10px;}
@@ -118,11 +96,18 @@ html,body{
 <div class="shell">
 <div class="shelf"></div>
 <div class="card">
-  <svg class="border-svg" viewBox="0 0 1024 768" xmlns="http://www.w3.org/2000/svg">
+  <svg class="border-svg" viewBox="0 0 1040 760" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="g-uniform" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.85"/>
         <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.85"/>
+      </linearGradient>
+      <linearGradient id="shine-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+        <stop offset="30%"  stop-color="#ffffff" stop-opacity="0.7"/>
+        <stop offset="50%"  stop-color="#ffffff" stop-opacity="1"/>
+        <stop offset="70%"  stop-color="#ffffff" stop-opacity="0.7"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
       </linearGradient>
       <linearGradient id="shine-glow-grad" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
@@ -131,13 +116,22 @@ html,body{
       </linearGradient>
       <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     </defs>
-    <polygon points="52,1.5 972,1.5 1022.5,52 1022.5,716 972,766.5 52,766.5 1.5,716 1.5,52" fill="none" stroke="url(#g-uniform)" stroke-width="2.5" filter="url(#glow)"/>
-    <path id="oct-path" fill="none" stroke="none" d="M52,1.5 L972,1.5 L1022.5,52 L1022.5,716 L972,766.5 L52,766.5 L1.5,716 L1.5,52 Z"/>
+    <polygon points="52,1.5 988,1.5 1038.5,52 1038.5,708 988,758.5 52,758.5 1.5,708 1.5,52" fill="none" stroke="url(#g-uniform)" stroke-width="2.5" filter="url(#glow)"/>
+    <polygon points="52,1.5 988,1.5 1038.5,52 1038.5,708 988,758.5 52,758.5 1.5,708 1.5,52" fill="none" stroke="rgba(0,229,255,0.18)" stroke-width="7"/>
+    <polygon points="58,7 982,7 1032,58 1032,702 982,752 58,752 8,702 8,58" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <path id="oct-path" fill="none" stroke="none" d="M52,1.5 L988,1.5 L1038.5,52 L1038.5,708 L988,758.5 L52,758.5 L1.5,708 L1.5,52 Z"/>
     <rect width="260" height="8" rx="4" fill="url(#shine-glow-grad)" filter="url(#glow)" transform="translate(-30,-6)">
+      <animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#oct-path"/></animateMotion>
+    </rect>
+    <rect width="240" height="4" rx="2" fill="url(#shine-glow-grad)" filter="url(#glow)" transform="translate(-20,-4)">
+      <animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#oct-path"/></animateMotion>
+    </rect>
+    <rect width="240" height="1.5" rx="0.75" fill="url(#shine-grad)" transform="translate(-20,-3)">
       <animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#oct-path"/></animateMotion>
     </rect>
   </svg>
 
+  <!-- HEADER -->
   <div class="trap-head">
     <span class="hdr-title">GHAR GHAR <span class="wg">WICKET</span> · HAR GHAR <span class="wg">WICKET</span></span>
     <div class="ticker-wrap"><div class="ticker">
@@ -146,6 +140,7 @@ html,body{
     </div></div>
   </div>
 
+  <!-- BODY -->
   <div class="body">
     <div class="map-panel">
       <div class="map-label"><span class="wtag">Select your district</span></div>
@@ -165,6 +160,7 @@ html,body{
         <div class="blk-corner tl"></div><div class="blk-corner tr"></div>
         <div class="blk-corner bl"></div><div class="blk-corner br"></div>
         <div class="blk-header">
+          <div class="blk-header-bg"></div>
           <div class="blk-title-wrap">
             <div class="blk-title-bg"></div>
             <div class="blk-title">// Medical Legends</div>
@@ -179,6 +175,7 @@ html,body{
         <div class="blk-corner tl"></div><div class="blk-corner tr"></div>
         <div class="blk-corner bl"></div><div class="blk-corner br"></div>
         <div class="blk-header">
+          <div class="blk-header-bg"></div>
           <div class="blk-title-wrap">
             <div class="blk-title-bg"></div>
             <div class="blk-title">// Engineering Legends</div>
@@ -192,6 +189,7 @@ html,body{
     </div>
   </div>
 
+  <!-- FOOTER -->
   <div class="trap-foot">
     <div class="fsub">You belong to this list of legends.</div>
     <div class="fmain">JOIN <span class="wg">WICKET JAIPUR</span> TODAY</div>
@@ -210,7 +208,11 @@ const DATA = {
   "Ajmer":   {m:["80 Students scored 670+ — 2024","JLN Medical College — 12 Selections","<b>AIR 45</b> — Meera Singh, Ajmer","<b>AIR 112</b> — Pooja Agarwal, Ajmer"],e:["90 Students @ 99%ile+ — 2024","NIT Jaipur — top selections","<b>AIR 145</b> — Vivek Pareek, Ajmer","<b>AIR 230</b> — Suresh Yadav, Ajmer"]},
   "Udaipur": {m:["70 Students scored 690+ — 2024","RNT Medical — 10 Selections","<b>AIR 22</b> — Kavya Rathore, Udaipur","<b>AIR 78</b> — Deepa Meena, Udaipur"],e:["60 Students @ 99%ile+ — 2024","MNIT Jaipur — key selections","<b>AIR 190</b> — Harsh Verma, Udaipur","<b>AIR 312</b> — Amit Joshi, Udaipur"]},
 };
-const FB={m:["Results coming soon","Strong NEET pipeline","Regional hub"],e:["Results coming soon","Strong JEE pipeline","Regional hub"]};
+const FB={
+  m:["Results coming soon for this district","Strong NEET pipeline — active","Regional talent development zone"],
+  e:["Results coming soon for this district","Strong JEE pipeline — active","Regional talent development zone"]
+};
+
 const centroids={};
 
 async function showLoading(loadId,listId){
@@ -220,14 +222,16 @@ async function showLoading(loadId,listId){
   loading.style.display='none';loading.classList.remove('active');
 }
 async function stream(id,facts){
-  const el=document.getElementById(id);const capped=facts.slice(0,7);
+  const el=document.getElementById(id);
+  const capped=facts.slice(0,7);
   for(const f of capped){
     const r=document.createElement('div');r.className='row typing';r.style.display='block';r.innerHTML=f;el.appendChild(r);r.style.width='0';
     await new Promise(res=>{r.style.transition='width 0.45s steps(22)';setTimeout(()=>{r.style.width='100%';setTimeout(()=>{r.classList.remove('typing');res();},600);},25);});
   }
 }
 function addPulse(cx,cy){
-  const svg=document.getElementById('rj');document.querySelectorAll('.pulse-ring').forEach(e=>e.remove());
+  const svg=document.getElementById('rj');
+  document.querySelectorAll('.pulse-ring').forEach(e=>e.remove());
   [0,0.6].forEach(delay=>{
     const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
     c.setAttribute('class','pulse-ring');c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r','0');
@@ -246,39 +250,73 @@ async function select(name){
   await showLoading('eng-loading','eng-list');await stream('eng-list',d.e);
 }
 
+// ── PAN / ZOOM ──
 (function(){
-  const viewport=document.getElementById('map-viewport'),mover=document.getElementById('map-mover');
+  const viewport=document.getElementById('map-viewport');
+  const mover=document.getElementById('map-mover');
   let scale=1,tx=0,ty=0,lastDist=null,drag=false,sx=0,sy=0,stx=0,sty=0;
-  function apply(){mover.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';}
+  let touchPan=false,tpsx=0,tpsy=0;
+
+  function apply(){
+    mover.style.transform='translate('+tx+'px,'+ty+'px) scale('+scale+')';
+  }
+
   viewport.addEventListener('wheel',e=>{
-    e.preventDefault();const rect=viewport.getBoundingClientRect();const mx=e.clientX-rect.left,my=e.clientY-rect.top;
-    const factor=e.deltaY<0?1.12:0.89;const ns=Math.min(12,Math.max(0.3,scale*factor));
-    tx=mx-(mx-tx)*(ns/scale);ty=my-(my-ty)*(ns/scale);scale=ns;apply();
+    e.preventDefault();
+    const rect=viewport.getBoundingClientRect();
+    const mx=e.clientX-rect.left,my=e.clientY-rect.top;
+    const factor=e.deltaY<0?1.12:0.89;
+    const ns=Math.min(12,Math.max(0.3,scale*factor));
+    tx=mx-(mx-tx)*(ns/scale);
+    ty=my-(my-ty)*(ns/scale);
+    scale=ns;apply();
   },{passive:false});
-  viewport.addEventListener('mousedown',e=>{drag=true;sx=e.clientX;sy=e.clientY;stx=tx;sty=ty;viewport.style.cursor='grabbing';});
-  window.addEventListener('mousemove',e=>{if(!drag)return;tx=stx+(e.clientX-sx);ty=sty+(e.clientY-sy);apply();});
+
+  viewport.addEventListener('mousedown',e=>{
+    drag=true;sx=e.clientX;sy=e.clientY;stx=tx;sty=ty;
+    viewport.style.cursor='grabbing';e.preventDefault();
+  });
+  window.addEventListener('mousemove',e=>{
+    if(!drag)return;
+    tx=stx+(e.clientX-sx);ty=sty+(e.clientY-sy);apply();
+  });
   window.addEventListener('mouseup',()=>{drag=false;viewport.style.cursor='grab';});
-  
-  // Touch Support
+
   viewport.addEventListener('touchstart',e=>{
-    if(e.touches.length===1){drag=true;sx=e.touches[0].clientX;sy=e.touches[0].clientY;stx=tx;sty=ty;}
-    else if(e.touches.length===2){lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);}
-  });
-  viewport.addEventListener('touchmove',e=>{
-    if(e.touches.length===1 && drag){tx=stx+(e.touches[0].clientX-sx);ty=sty+(e.touches[0].clientY-sy);apply();}
-    else if(e.touches.length===2){
-      const dist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
-      if(lastDist){scale=Math.min(12,Math.max(0.3,scale*(dist/lastDist)));apply();}
-      lastDist=dist;
+    if(e.touches.length===2){
+      lastDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+      tpsx=(e.touches[0].clientX+e.touches[1].clientX)/2;tpsy=(e.touches[0].clientY+e.touches[1].clientY)/2;touchPan=true;
     }
-  });
-  viewport.addEventListener('touchend',()=>{drag=false;lastDist=null;});
+  },{passive:true});
+  viewport.addEventListener('touchmove',e=>{
+    if(e.touches.length===2&&lastDist){
+      e.preventDefault();
+      const dist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
+      const rect=viewport.getBoundingClientRect();
+      const cx=(e.touches[0].clientX+e.touches[1].clientX)/2,cy=(e.touches[0].clientY+e.touches[1].clientY)/2;
+      const mx=cx-rect.left,my=cy-rect.top;
+      const ns=Math.min(12,Math.max(0.3,scale*(dist/lastDist)));
+      tx=mx-(mx-tx)*(ns/scale);ty=my-(my-ty)*(ns/scale);scale=ns;lastDist=dist;
+      if(touchPan){tx+=cx-tpsx;ty+=cy-tpsy;tpsx=cx;tpsy=cy;}
+      apply();
+    }
+  },{passive:false});
+  viewport.addEventListener('touchend',()=>{lastDist=null;touchPan=false;});
 })();
 
+// ── GEOJSON ──
 (async function(){
-  const svg=document.getElementById('rj');let gj;
-  const names=['Jaipur','Jodhpur','Kota','Ajmer','Bikaner','Udaipur','Sikar','Dausa','Alwar','Barmer','Nagaur','Churu'];
-  gj={
+  const svg=document.getElementById('rj');
+  let gj;
+
+  try{
+    const r=await fetch('rajasthan.geoson');
+    if(!r.ok)throw new Error('not found');
+    gj=await r.json();
+  } catch(e){
+    // Test mode: 12 fake districts as a 4x3 grid
+    const names=['Jaipur','Jodhpur','Kota','Ajmer','Bikaner','Udaipur','Sikar','Dausa','Alwar','Barmer','Nagaur','Churu'];
+    gj={
     "type": "FeatureCollection",
     "features": [
         {
@@ -30685,19 +30723,41 @@ async function select(name){
     ]
 }
 ;
-  const VW=500,VH=520;let x0=Infinity,x1=-Infinity,y0=Infinity,y1=-Infinity;
-  gj.features.forEach(f=>{const rings=f.geometry.type==='Polygon'?f.geometry.coordinates:f.geometry.coordinates.flat(1);rings.forEach(ring=>ring.forEach(([lo,la])=>{if(lo<x0)x0=lo;if(lo>x1)x1=lo;if(la<y0)y0=la;if(la>y1)y1=la;}));});
-  const sc=Math.min((VW-20)/(x1-x0),(VH-20)/(y1-y0));const ox=(VW-(x1-x0)*sc)/2,oy=(VH-(y1-y0)*sc)/2;
-  const px=lo=>ox+(lo-x0)*sc,py=la=>oy+(y1-la)*sc;
-  function ringToD(ring){return ring.map(([lo,la],i)=>(i?'L':'M')+px(lo).toFixed(1)+','+py(la).toFixed(1)).join('')+'Z';}
+  }
+
+  const VW=500,VH=520;
+  let x0=Infinity,x1=-Infinity,y0=Infinity,y1=-Infinity;
   gj.features.forEach(f=>{
-    const name=f.properties.district,geom=f.geometry,d=geom.type==='Polygon'?geom.coordinates.map(ringToD).join(' '):geom.coordinates.map(p=>p.map(ringToD).join(' ')).join(' ');
-    const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('class','dist');path.setAttribute('data-n',name);path.setAttribute('d',d);path.addEventListener('click',()=>select(name));svg.appendChild(path);
-    const ring=geom.type==='Polygon'?geom.coordinates[0]:geom.coordinates[0][0];let lx0=Infinity,lx1=-Infinity,ly0=Infinity,ly1=-Infinity;
-    ring.forEach(([lo,la])=>{if(lo<lx0)lx0=lo;if(lo>lx1)lx1=lo;if(la<ly0)ly0=la;if(la>ly1)ly1=la;});
-    const cx=px((lx0+lx1)/2),cy=py((ly0+ly1)/2);centroids[name]={cx,cy};
-    const t=document.createElementNS('http://www.w3.org/2000/svg','text');t.setAttribute('class','lbl');t.setAttribute('id','l-'+name.replace(/\s/g,'_'));t.setAttribute('x',cx.toFixed(1));t.setAttribute('y',cy.toFixed(1));t.textContent=name.toUpperCase().slice(0,8);svg.appendChild(t);
+    const rings=f.geometry.type==='Polygon'?f.geometry.coordinates:f.geometry.coordinates.flat(1);
+    rings.forEach(ring=>ring.forEach(([lo,la])=>{if(lo<x0)x0=lo;if(lo>x1)x1=lo;if(la<y0)y0=la;if(la>y1)y1=la;}));
   });
+  const sc=Math.min((VW-20)/(x1-x0),(VH-20)/(y1-y0));
+  const ox=(VW-(x1-x0)*sc)/2,oy=(VH-(y1-y0)*sc)/2;
+  const px=lo=>ox+(lo-x0)*sc,py=la=>oy+(y1-la)*sc;
+
+  function ringToD(ring){return ring.map(([lo,la],i)=>(i?'L':'M')+px(lo).toFixed(1)+','+py(la).toFixed(1)).join('')+'Z';}
+
+  gj.features.forEach(f=>{
+    const name=f.properties.district||'Unknown';
+    const geom=f.geometry;
+    const d=geom.type==='Polygon'?geom.coordinates.map(ringToD).join(' '):geom.coordinates.map(p=>p.map(ringToD).join(' ')).join(' ');
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('class','dist');path.setAttribute('data-n',name);path.setAttribute('d',d);
+    path.addEventListener('click',()=>select(name));
+    svg.appendChild(path);
+    const ring=geom.type==='Polygon'?geom.coordinates[0]:geom.coordinates[0][0];
+    let lx0=Infinity,lx1=-Infinity,ly0=Infinity,ly1=-Infinity;
+    ring.forEach(([lo,la])=>{if(lo<lx0)lx0=lo;if(lo>lx1)lx1=lo;if(la<ly0)ly0=la;if(la>ly1)ly1=la;});
+    const cx=px((lx0+lx1)/2),cy=py((ly0+ly1)/2);
+    centroids[name]={cx,cy};
+    const t=document.createElementNS('http://www.w3.org/2000/svg','text');
+    t.setAttribute('class','lbl');t.setAttribute('id','l-'+name.replace(/\s/g,'_'));
+    t.setAttribute('x',cx.toFixed(1));t.setAttribute('y',cy.toFixed(1));
+    const label=name.toUpperCase();
+    t.textContent=label.length>9?label.slice(0,8)+'.':label;
+    svg.appendChild(t);
+  });
+
   select('Sikar');
 })();
 </script>
